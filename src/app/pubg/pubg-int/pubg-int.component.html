@@ -1,0 +1,15 @@
+<div class="container">
+    <h1>Game type: PUBG</h1>
+    <input type="text" [(ngModel)]="playerName" placeholder="Enter player name">
+    <button (click)="fetchProfile()">джысон</button>
+    <div *ngFor="let profile of profiles">
+        <h2>Id: {{ profile.id }}</h2>
+        <h2>Player: {{ profile.attributes.name }}</h2>
+        <h2>Platform: {{ profile.attributes.shardId }}</h2>
+        <h2>Banned?: {{ profile.attributes.banType }}</h2> 
+        <h2>ClanId: {{ profile.attributes.clanId }}</h2>   
+    </div>
+    <pre>
+        {{ profiles | json }}
+    </pre>
+</div>
